@@ -1,5 +1,7 @@
 
 open Calculatrice.Lexer
+open Calculatrice.Eval
+open Calculatrice.Parser 
 
 (*
 let readUserInput () : string =
@@ -9,10 +11,8 @@ let readUserInput () : string =
 
 let () =
   let s = "3+2" in (*todo: spaces*)
-  let tokens = tokenize s in
-  afficheTokenList tokens;
+  print_float (eval (parseTokens (tokenize s)))
 
   (* Ici, il faudra ajouter constructExpr pour créer l'arbre *)
   (* let ast = constructExpr tokens in *)
   (* print_float (eval ast) *)
-
